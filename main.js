@@ -7,14 +7,26 @@ async function Typer() {
   return content;
 }
 
-async function getTyper () {
+let index = 0;
+let code = [];
+
+async function getTyper(e) {
   const utf8Decoder = new TextDecoder('utf-8');
   const response = await Typer();
-  const decode = utf8Decoder.decode(response.value)
-  consoleBG.textContent = decode;
+  const decode = utf8Decoder.decode(response.value);
+  const newChar = decode.charAt(index);
+  code.push(newChar);
+  consoleBG.textContent = code.join('');
+  index += 1;
 }
 
-consoleBG.addEventListener("click", getTyper)
+//.replace(/\n/g, "<br/>")
+
+// ^ won't work if i'm importing the "code" via a string since it brings in one char at a time instead of straight html
+
+consoleBG.addEventListener("keydown", (e) => {
+  getTyper(e);
+})
 
 
 
