@@ -10,29 +10,22 @@ async function Typer() {
 let index = 0;
 let code = [];
 
+let blinky = document.createElement("span");
+blinky.setAttribute("id", "blink");
+blinky.textContent = "▌";
+
 async function getTyper(e) {
   const utf8Decoder = new TextDecoder('utf-8');
   const response = await Typer();
   const decode = utf8Decoder.decode(response.value);
-  const newChar = decode.charAt(index);
+  const newChar = decode.charAt(index).replace(/\n/g, "<br/>");
   code.push(newChar);
-  consoleBG.textContent = code.join('');
+  consoleBG.innerHTML = code.join('');
+  consoleBG.appendChild(blinky);
   index += 1;
+  consoleBG.scrollTop = consoleBG.scrollHeight;
 }
-
-//.replace(/\n/g, "<br/>")
-
-// ^ won't work if i'm importing the "code" via a string since it brings in one char at a time instead of straight html
 
 consoleBG.addEventListener("keydown", (e) => {
   getTyper(e);
 })
-
-
-
-/**
- * needs keydown functionality
- * display one character per keydown
- * display breaks & tabs
- * consoleBG needs to be a textbox
- */

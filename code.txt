@@ -1,7 +1,8 @@
-/* This code from https://github.com/savwiley/waldo/ & is being used for testing */
+/* This code from 
+  https://github.com/savwiley/waldo/ & is being used for testing */
 
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+  import { useParams, Link } from "react-router-dom";
 import Header from "./components/Header.js";
 import Winner from "./components/Winner.js";
 import firebase from "./firebase.js";
