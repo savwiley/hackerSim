@@ -5,14 +5,22 @@ const start = document.querySelector(".start");
 const yesBtn = document.querySelector("#yes");
 const noBtn = document.querySelector("#no");
 
-//buttons
+//button functions
 const selectYes = () => {
   consoleBG.style.display = "block";
   start.style.display = "none";
 }
+const yesHover = () => {
+  yesBtn.textContent = ">YES";
+  noBtn.textContent = "NO";
+}
 const selectNo = () => {
   video.style.display = "block";
   start.style.display = "none";
+}
+const noHover = () => {
+  noBtn.textContent = ">NO";
+  yesBtn.textContent = "YES";
 }
 
 //variables
@@ -51,16 +59,15 @@ async function getTyper(e) {
 window.addEventListener("keydown", (e) => {
   if (consoleBG.style.display === "block") {
     getTyper(e);
+    selected = null;
   }
-  if (e.keyCode === 37) {
-    yesBtn.textContent = ">YES";
-    noBtn.textContent = "NO";
+  if (e.key === "ArrowLeft") {
+    yesHover();
     selected = "YES";
-  } else if (e.keyCode === 39) {
-    noBtn.textContent = ">NO";
-    yesBtn.textContent = "YES";
+  } else if (e.key === "ArrowRight") {
+    noHover();
     selected = "NO";
-  } else if (e.keyCode === 13) {
+  } else if (e.key === "Enter") {
     if (selected === "YES") {
       selectYes();
     } else if (selected === "NO") {
@@ -71,4 +78,6 @@ window.addEventListener("keydown", (e) => {
 
 //yes & no button events
 yesBtn.addEventListener("click", selectYes);
+yesBtn.addEventListener("mouseover", yesHover);
 noBtn.addEventListener("click", selectNo)
+noBtn.addEventListener("mouseover", noHover);
