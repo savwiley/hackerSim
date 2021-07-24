@@ -1,5 +1,10 @@
+:root {
+  --background: #1d1d1d;
+  --secondary: #a3a30a;
+}
+
 body {
-  background: #3b3b3b;
+  background: var(--background);
 }
 
 .start {
@@ -11,8 +16,8 @@ body {
   left: 0;
   font-size: 50px;
   padding-top: 10%;
-  text-shadow: 0px 0px 2px #caca00;
-  color: #caca00;
+  text-shadow: 0px 0px 2px var(--secondary);
+  color: var(--secondary);
   overflow: auto;
   text-align: center;
   font-weight: bold;
@@ -40,8 +45,8 @@ body {
   overflow: auto;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
-  text-shadow: 0px 0px 2px #caca00;
-  color: #caca00;
+  text-shadow: 0px 0px 2px var(--secondary);
+  color: var(--secondary);
   cursor: default;
 }
 
@@ -52,20 +57,20 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  color: #caca00;
+  color: var(--secondary);
   cursor: text;
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
-  text-shadow: 0px 0px 2px #caca00;
+  text-shadow: 0px 0px 2px var(--secondary);
   overflow: auto;
   padding: 10px;
   white-space: pre-wrap;
-  border: 5px ridge #caca00;
+  border: 5px ridge var(--secondary);
   outline: none;
 }
 #consoleBG {
   position: fixed;
-  top: 27px;
+  top: 30px;
   left: 5px;
   right: 5px;
   bottom: 5px;
@@ -75,10 +80,10 @@ body {
 }
 
 .tab {
-  color: #3b3b3b;
-  background: #caca00;
+  color: var(--background);
+  background: var(--secondary);
   padding: 4px 0 2px;
-  border-bottom: 2px ridge #caca00;
+  border-bottom: 2px ridge var(--secondary);
   cursor: default;
   overflow: hidden;
 }
@@ -97,7 +102,7 @@ body {
 
 #win1, #win2 {
   position: fixed;
-  border: 5px ridge #caca00;
+  border: 5px ridge var(--secondary);
   z-index: 10;
   cursor: default;
 }
@@ -109,7 +114,7 @@ body {
   right: 5px;
 }
 #win2 {
-  background: bottom/cover url("https://64.media.tumblr.com/9488d87045d5a6ec32f0fa47800610ec/tumblr_n7g7kiW5a21tcx5h6o1_500.gif") no-repeat, #3b3b3b;
+  background: bottom/cover url("https://64.media.tumblr.com/9488d87045d5a6ec32f0fa47800610ec/tumblr_n7g7kiW5a21tcx5h6o1_500.gif") no-repeat, var(--background);
   width: 20%;
   height: 34%;
   top: 150px;
@@ -132,15 +137,15 @@ body {
 }
 @keyframes blinking{
   0% {
-    color: #caca00;
-    text-shadow: 0px 0px 2px #caca00;
+    color: var(--secondary);
+    text-shadow: 0px 0px 2px var(--secondary);
   }
   50% {
     color: transparent;
     text-shadow: none;
   }
   100% {
-    color: #caca00;
-    text-shadow: 0px 0px 2px #caca00;
+    color: var(--secondary);
+    text-shadow: 0px 0px 2px var(--secondary);
   }
 }
