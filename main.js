@@ -1,5 +1,6 @@
 //selectors
-const consoleBG = document.querySelector(".console");
+const console = document.querySelector(".console");
+const consoleBG = document.querySelector("#consoleBG");
 const video = document.querySelector(".video");
 const start = document.querySelector(".start");
 const yesBtn = document.querySelector("#yes");
@@ -7,7 +8,7 @@ const noBtn = document.querySelector("#no");
 
 //button functions
 const selectYes = () => {
-  consoleBG.style.display = "block";
+  console.style.display = "block";
   start.style.display = "none";
 }
 const yesHover = () => {
@@ -57,7 +58,7 @@ async function getTyper(e) {
 
 //keydown events
 window.addEventListener("keydown", (e) => {
-  if (consoleBG.style.display === "block") {
+  if (console.style.display === "block") {
     getTyper(e);
     selected = null;
   }
