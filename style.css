@@ -61,15 +61,70 @@ body {
   padding: 10px;
   white-space: pre-wrap;
   border: 5px ridge #caca00;
+  outline: none;
 }
-#tab {
+#consoleBG {
+  position: fixed;
+  top: 27px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  padding: 10px;
+  z-index: 1;
+  overflow: auto;
+}
+
+.tab {
   color: #3b3b3b;
   background: #caca00;
+  padding: 4px 0 2px;
+  border-bottom: 2px ridge #caca00;
+  cursor: default;
+  overflow: hidden;
+}
+#tab1 {
   position: fixed;
   top: 5px;
   left: 5px;
   right: 5px;
-  padding: 2px 0 2px 5px;
+}
+#tab2, #tab3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+#win1, #win2 {
+  position: fixed;
+  border: 5px ridge #caca00;
+  z-index: 10;
+  cursor: default;
+}
+#win1 {
+  background: url("https://i.pinimg.com/originals/d8/47/7c/d8477c065b8d3c7253da4541e32e9637.gif");
+  width: 30%;
+  height: 40%;
+  bottom: 5px;
+  right: 5px;
+}
+#win2 {
+  background: bottom/cover url("https://64.media.tumblr.com/9488d87045d5a6ec32f0fa47800610ec/tumblr_n7g7kiW5a21tcx5h6o1_500.gif") no-repeat, #3b3b3b;
+  width: 20%;
+  height: 34%;
+  top: 150px;
+  right: 5px;
+}
+
+.icons {
+  display: inline-flex;
+  width: 70px;
+  padding-right: 5px;
+  justify-content: space-between;
+  float: right;
+}
+.icons i, .icons b {
+  cursor: pointer;
 }
 
 #blink {
