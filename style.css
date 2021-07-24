@@ -1,10 +1,25 @@
 :root {
+  --background: #1d1b1b;
+  --secondary: #b9b9b9;
+}
+
+/*
   --background: #1d1d1d;
   --secondary: #a3a30a;
-}
+*/
 
 body {
   background: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
 }
 
 .start {
