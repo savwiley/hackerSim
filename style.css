@@ -1,12 +1,8 @@
 :root {
   --background: #1d1b1b;
-  --secondary: #b9b9b9;
+  --secondary: #d3d3d3;
+  --tabs: #2f2f69;
 }
-
-/*
-  --background: #1d1d1d;
-  --secondary: #a3a30a;
-*/
 
 body {
   background: var(--background);
@@ -80,7 +76,7 @@ body {
   overflow: auto;
   padding: 10px;
   white-space: pre-wrap;
-  border: 5px ridge var(--secondary);
+  border: 3px outset #ececec;
   outline: none;
 }
 #consoleBG {
@@ -95,18 +91,19 @@ body {
 }
 
 .tab {
-  color: var(--background);
-  background: var(--secondary);
+  color: var(--secondary);
+  background: var(--tabs);
+  border-bottom: 2px outset var(--tabs);
+  text-shadow: none;
   padding: 4px 0 2px;
-  border-bottom: 2px ridge var(--secondary);
   cursor: default;
   overflow: hidden;
 }
 #tab1 {
   position: fixed;
-  top: 5px;
-  left: 5px;
-  right: 5px;
+  top: 3px;
+  left: 3px;
+  right: 3px;
 }
 #tab2, #tab3 {
   position: absolute;
@@ -117,7 +114,7 @@ body {
 
 #win1, #win2 {
   position: fixed;
-  border: 5px ridge var(--secondary);
+  border: 3px outset #ececec;
   z-index: 10;
   cursor: default;
 }
